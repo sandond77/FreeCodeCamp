@@ -9,7 +9,13 @@
 // reverseString("Greetings from Earth") should return "htraE morf sgniteerG".
 
 function reverseString(str) {
-	return str;
+	const arrayed = str.split("")
+	const reverse = arrayed.reverse();
+	str = reverse.join("");
+	// console.log(arrayed, reverse, str)
+	return console.log(str);
   }
   
   reverseString("hello");
+  reverseString("Howdy");
+  reverseString("Greetings from Earth");
