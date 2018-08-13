@@ -11,3 +11,20 @@
 //   return num;
 // }
 // factorialize(5);
+
+function factorialize(num) {
+	let result = num;
+
+	if (num === 0 || num === 1){
+		return 1;
+	}
+
+	while (num > 1){
+		num--;
+		result = result * num;
+	}
+
+  return console.log(result);
+}
+
+factorialize(5);
