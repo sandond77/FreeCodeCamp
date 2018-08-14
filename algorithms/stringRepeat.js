@@ -37,3 +37,22 @@ repeatStringNumTimes("abc", 1) //should return "abc".
 repeatStringNumTimes("*", 8) //should return "********".
 repeatStringNumTimes("abc", -2) //should return "".
 
+// SOLUTION 1
+// function repeatStringNumTimes(str, num) {
+//   var accumulatedStr = '';
+
+//   while (num > 0) {
+//     accumulatedStr += str;
+//     num--;
+//   }
+
+//   return accumulatedStr;
+// }
+
+
+// SOLUTION 2
+// function repeatStringNumTimes(str, num) {
+//   return num > 0 ? str.repeat(num) : '';
+// }
+
+// repeatStringNumTimes("abc", 3);
