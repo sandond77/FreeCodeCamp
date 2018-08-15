@@ -28,11 +28,6 @@
 
 //MY SOLUTION #1
 function booWho(bool) {
-	typeof bool === "boolean"
-		return console.log(true)
-	} else {
-		return console.log(false)
-	}
 	return (typeof bool === "boolean") ? console.log(true) : console.log(false) ;
 }
 
