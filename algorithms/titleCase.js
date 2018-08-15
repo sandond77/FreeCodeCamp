@@ -21,12 +21,14 @@
 function titleCase(str) {
 	str = str.toLowerCase();
 	str = str.split(" ");
-	console.log(str)
 	for (let i=0; i < str.length; i++){
-		str[i] = str[i][0].toUpperCase() + str[i].slice(1)
+		str[i] = str[i][0].toUpperCase() + str[i].slice(1) // Strings are immutable in JS. need to create new string; cant nnot set str[i][0] = ...
 	}
+	str = str.join(" ");
 	console.log(str);
 	return str;
 }
   
 titleCase("I'm a little tea pot");
+titleCase("sHoRt AnD sToUt") //should return Short And Stout.
+titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") //should return Here Is My Handle Here Is My Spout.
