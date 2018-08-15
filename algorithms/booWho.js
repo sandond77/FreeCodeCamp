@@ -54,3 +54,9 @@ booWho(NaN) //should return false.
 booWho("a") //should return false.
 booWho("true") //should return false.
 booWho("false") //should return false.
+
+
+// SOLUTION
+// function booWho(bool) {
+// 	return typeof bool === 'boolean';
+//   }
