@@ -24,7 +24,21 @@
 
 function getIndexToIns(arr, num) {
   // Find my place in this sorted array.
-  return num;
+  	arr = arr.sort((a,b)=> a-b);
+  console.log("after sorting", arr)
+  	let index = "";
+
+  	for (let i=0; i < arr.length; i++){
+	  	if(arr[i] >= num){
+			index = i;
+			console.log(index)
+		  	return index; //this will make it return at the first match found;
+		} 
+  	}
+  return arr.length //if all the numbers in the array are larger than the number, then it should be added at the end of the array
 }
 
-getIndexToIns([40, 60], 50);
+
+getIndexToIns([10, 20, 30, 40, 50], 35) //should return 3.
+// getIndexToIns([10, 20, 30, 40, 50], 30) //should return 2.
+// getIndexToIns([40, 60], 50) //should return 1.
