@@ -42,3 +42,24 @@ function getIndexToIns(arr, num) {
 getIndexToIns([10, 20, 30, 40, 50], 35) //should return 3.
 // getIndexToIns([10, 20, 30, 40, 50], 30) //should return 2.
 // getIndexToIns([40, 60], 50) //should return 1.
+
+
+// SOLUTION #1
+// function getIndexToIns(arr, num) {
+// 	// sort and find right index
+// 	var index = arr.sort((curr, next) => curr > next)
+// 	  .findIndex((currNum)=> num <= currNum);
+// 	// Returns proper answer
+// 	return index === -1 ? arr.length : index;
+//   }
+  
+//   getIndexToIns([40, 60], 500);
+
+// SOLUTION #2
+// function getIndexToIns(arr, num) {
+
+// 	return arr.concat(num).sort((a,b) => a-b).indexOf(num);
+	
+// 	}
+	
+// 	getIndexToIns([1,3,4],2);
