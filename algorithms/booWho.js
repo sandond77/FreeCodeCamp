@@ -13,7 +13,7 @@
 
 // booWho(null);
 
-TEST CODE
+// TEST CODE
 // booWho(true) should return true.
 // booWho(false) should return true.
 // booWho([1, 2, 3]) should return false.
@@ -24,3 +24,33 @@ TEST CODE
 // booWho("a") should return false.
 // booWho("true") should return false.
 // booWho("false") should return false.
+
+
+//MY SOLUTION #1
+function booWho(bool) {
+	typeof bool === "boolean"
+		return console.log(true)
+	} else {
+		return console.log(false)
+	}
+	return (typeof bool === "boolean") ? console.log(true) : console.log(false) ;
+}
+
+//MY SOLUTION #2
+function booWho(bool) {
+	typeof bool === "boolean"
+		return console.log(true)
+	} else {
+		return console.log(false)
+	}
+ 
+booWho(true) //should return true.
+booWho(false) //should return true.
+booWho([1, 2, 3]) //should return false.
+booWho([].slice) //should return false.
+booWho({ "a": 1 }) //should return false.
+booWho(1) //should return false.
+booWho(NaN) //should return false.
+booWho("a") //should return false.
+booWho("true") //should return false.
+booWho("false") //should return false.
