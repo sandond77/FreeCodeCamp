@@ -32,3 +32,21 @@ function titleCase(str) {
 titleCase("I'm a little tea pot");
 titleCase("sHoRt AnD sToUt") //should return Short And Stout.
 titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") //should return Here Is My Handle Here Is My Spout.
+
+// SOLUTION #1 - SIMPLE METHOD
+// function titleCase(str) {
+// 	str = str.toLowerCase().split(' ');
+// 	for (var i = 0; i < str.length; i++) {
+// 	  str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+// 	}
+// 	return str.join(' ');
+//   }
+  
+// SOLUTION #2 - USING MAP
+// function titleCase(str) {
+// 	return str.toLowerCase().split(' ').map(function(word) {
+// 	  return (word.charAt(0).toUpperCase() + word.slice(1));
+// 	}).join(' ');
+// }
+
+
