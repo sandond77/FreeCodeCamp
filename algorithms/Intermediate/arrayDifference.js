@@ -50,3 +50,42 @@ diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]) //should return [4].
 diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4])//should return ["piglet", 4].
 diffArray([], ["snuffleupagus", "cookie monster", "elmo"]) //should return ["snuffleupagus", "cookie monster", "elmo"].
 diffArray([1, "calf", 3, "piglet"], [7, "filly"]) //should return [1, "calf", 3, "piglet", 7, "filly"].
+
+
+// GIVEN SOLUTION #1
+// function diffArray(arr1, arr2) {
+// 	var newArr = [];
+
+// 	function onlyInFirst(first, second) {
+// 	// Looping through an array to find elements that don't exist in another array
+// 	  for (var i=0;i<first.length;i++) {
+// 		if (second.indexOf(first[i]) === -1) {
+// 		  // Pushing the elements unique to first to newArr
+// 		  newArr.push(first[i]);
+// 		}
+// 	  }
+// 	}
+
+// 	onlyInFirst(arr1, arr2);
+// 	onlyInFirst(arr2, arr1);
+
+// 	return newArr;
+//   }
+
+// GIVEN SOLUTION #2
+// function diffArray(arr1, arr2) {
+// 	return arr1
+// 	  .concat(arr2)
+// 	  .filter(
+// 		  item => !arr1.includes(item) || !arr2.includes(item)
+// 	  )
+//   }
+
+// GIVEN SOLUTION #3
+// function diffArray(arr1, arr2) {
+//     return arr1
+//       .filter(el => !arr2.includes(el))
+//       .concat(
+//         arr2.filter(el => !arr1.includes(el))
+//       )
+// }
