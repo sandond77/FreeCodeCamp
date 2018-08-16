@@ -55,3 +55,25 @@ mutation(["Alien", "line"])  //should return true.
 mutation(["floor", "for"])  //should return true.
 mutation(["hello", "neo"]) // should return false.
 mutation(["voodoo", "no"])  //should return false.
+
+
+// SOLUTION #1
+// function mutation(arr) {
+// 	var test = arr[1].toLowerCase();
+// 	var target = arr[0].toLowerCase();
+// 	for (var i=0;i<test.length;i++) {
+// 	  if (target.indexOf(test[i]) < 0)
+// 		return false;
+// 	}
+// 	return true;
+// }
+
+// SOLUTION #2
+// function mutation(arr) {
+// 	return arr[1].toLowerCase()
+// 	  .split('')
+// 	  .every(function(letter) {
+// 		return arr[0].toLowerCase()
+// 		  .indexOf(letter) != -1;
+// 	  });
+// }
