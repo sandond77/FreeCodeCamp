@@ -23,9 +23,21 @@
 // destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan") should return [12,92,65].
 
 
-  function destroyer(arr) {
-	// Remove all the values
+function destroyer(arr) {
+
+	let arg = Array.prototype.slice.call(arguments);
+
+	for (var i = 0; i < arr.length; i++) {
+		for (var j = 1; j < arg.length; j++) {
+			arr = arr.filter((arr) => (arr !== arg[j]))
+		}
+	}
+	
+	console.log(arr)
+
 	return arr;
-  }
+}
+
+
   
-  destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
