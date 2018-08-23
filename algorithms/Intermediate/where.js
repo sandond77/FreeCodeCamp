@@ -33,16 +33,30 @@ function whatIsInAName(collection, source) {
 	var arr = [];
   	// What's in a name?
   	var keys = Object.keys(source);
-
+	console.log(`keys ${ keys }`)
 	arr = collection.filter((collection) =>{
 		for (var i = 0; i < keys.length; i++) {
-			keys[i]
-			if () {}
+			//enable this line to see why the solution works
+			console.log(`--------------------------- 
+			current property: ${collection.hasOwnProperty(keys[i])}
+			current key: ${keys[i]}
+			current collection: ${collection[keys[i]]}
+			current source: ${source[keys[i]]}`
+			)
+			if(!collection.hasOwnProperty(keys[i]) || collection[keys[i]] !== source[keys[i]]){
+				return false
+			} 
 		}
+		return true
 	})
 	
 	console.log(arr)
-	return keys
+	return arr
 }
 
-whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+// whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+// whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "apple": 1 })// should return [{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }].
+// whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 })// should return [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }].
+// whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 })// should return [{ "apple": 1, "bat": 2, "cookie": 2 }].
+// whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 }) //should return [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }].
+// whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3})// should return []
