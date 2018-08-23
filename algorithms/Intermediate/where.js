@@ -60,3 +60,48 @@ function whatIsInAName(collection, source) {
 // whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 })// should return [{ "apple": 1, "bat": 2, "cookie": 2 }].
 // whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 }) //should return [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }].
 // whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3})// should return []
+
+
+
+// GIVEN SOLUTION #1
+// function whatIsInAName(collection, source) {
+// 	var srcKeys = Object.keys(source);
+  
+// 	// filter the collection
+// 	return collection.filter(function (obj) {
+// 	  for(var i = 0; i < srcKeys.length; i++) {
+// 		if(!obj.hasOwnProperty(srcKeys[i]) || obj[srcKeys[i]] !== source[srcKeys[i]]) {
+// 		  return false;
+// 		}
+// 	  }
+// 	  return true;
+// 	});
+// }
+
+// GIVEN SOLUTION #2
+// function whatIsInAName(collection, source) {
+// 	var srcKeys = Object.keys(source);
+  
+// 	return collection.filter(function (obj) {
+// 	  return srcKeys.every(function (key) {
+// 		return obj.hasOwnProperty(key) && obj[key] === source[key];
+// 	  });
+// 	});
+// }
+  
+// GIVEN SOLUTION #3
+// function whatIsInAName(collection, source) {
+// 	var srcKeys = Object.keys(source);
+  
+// 	// filter the collection
+// 	return collection.filter(function (obj) {
+// 	  return srcKeys
+// 		.map(function(key) {
+// 		  return obj.hasOwnProperty(key) && obj[key] === source[key];
+// 		})
+// 		.reduce(function(a, b) {
+// 		  return a && b;
+// 		});
+// 	});
+// }
+  
