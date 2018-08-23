@@ -25,6 +25,7 @@
 
   function destroyer(arr) {
 	// Remove all the values
+	console.log(typeof arr)
 	return arr;
   }
   
