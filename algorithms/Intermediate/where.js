@@ -30,13 +30,19 @@
 
 
 function whatIsInAName(collection, source) {
-  // What's in a name?
-  var arr = [];
-  // Only change code below this line
-  
-  
-  // Only change code above this line
-  return arr;
+	var arr = [];
+  	// What's in a name?
+  	var keys = Object.keys(source);
+
+	arr = collection.filter((collection) =>{
+		for (var i = 0; i < keys.length; i++) {
+			keys[i]
+			if () {}
+		}
+	})
+	
+	console.log(arr)
+	return keys
 }
 
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
