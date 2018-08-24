@@ -15,14 +15,20 @@ function translatePigLatin(str) {
 translatePigLatin("consonant");
 
 // TEST CASES
-translatePigLatin("california") //should return "aliforniacay".
-translatePigLatin("paragraphs")// should return "aragraphspay".
-translatePigLatin("glove") //should return "oveglay".
-translatePigLatin("algorithm") //should return "algorithmway".
-translatePigLatin("eight") //should return "eightway".
+// translatePigLatin("california") //should return "aliforniacay".
+// translatePigLatin("paragraphs")// should return "aragraphspay".
+// translatePigLatin("glove") //should return "oveglay".
+// translatePigLatin("algorithm") //should return "algorithmway".
+// translatePigLatin("eight") //should return "eightway".
 
 function translatePigLatin(str) {
   return str;
 }
+
+// Precode
+// 1. Find consonant cluster via regex by stopping when a vowel is hit
+// 2. Extract the cluster. 
+// 3. Append -ay to the end cluster
+// 4. Append modified cluster to the end of string
 
 translatePigLatin("consonant");
