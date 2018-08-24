@@ -21,9 +21,12 @@
 // spinalCase("AllThe-small Things") //should return "all-the-small-things".
 
 function spinalCase(str) {
-str = str.toLowerCase().split(" ").join("-");
-console.log(str)
-return str;
+	//https://regexr.com/ to generate regex
+	//Regex will create an array, seperated by where is a space/capital letter/underscore
+	//Join will merge the array together into a string with the dash and toLowerCase() converts all to lower case
+	str = str.split(/\s|_|(?=[A-Z])/).join("-").toLowerCase(); 
+	console.log(str)
+	return str;
 }
 
 spinalCase('This Is Spinal Tap');
