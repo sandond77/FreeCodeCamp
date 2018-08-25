@@ -23,12 +23,27 @@
 
 // Precode 
 // 1. split up string into array using array.split(); each word = one element
-// 2. Use array.indexOf() to find where word needs to be replaced
-// 3. Use array.splice() to sub out the words
+// 2. Check to see if the letter being replace is capitalized or not
+// 3. Use array.indexOf() to find where word needs to be replaced
+// 4. Use array.splice() to sub out the words
 
 // My Solution
 function myReplace(str, before, after) {
+	str = str.split(" ");
+	console.log(str)
+	let index = str.indexOf(before);
+
+	if(before[0] === before[0].toUpperCase()){
+		let letter = after[0].toUpperCase();
+		after = letter + after.slice(1)
+		console.log(after) 
+	}
+
+	str.splice(index,1,after)
+	str = str.join(" ");
+	console.log(index)
+	console.log(str)
 	return str;
   }
   
-  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+  myReplace("A quick brown fox Jumped over the lazy dog", "Jumped", "leaped");
