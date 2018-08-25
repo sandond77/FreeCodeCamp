@@ -33,9 +33,9 @@ function myReplace(str, before, after) {
 	console.log(str)
 	let index = str.indexOf(before);
 
-	if(before[0] === before[0].toUpperCase()){
-		let letter = after[0].toUpperCase();
-		after = letter + after.slice(1)
+	if(before[0] === before[0].toUpperCase()){ //this checks to see if the first letter is capitalized or not
+		let letter = after[0].toUpperCase(); 
+		after = letter + after.slice(1) // this will restructure out string with a capitalized letter 
 		console.log(after) 
 	}
 
