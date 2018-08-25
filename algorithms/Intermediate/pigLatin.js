@@ -8,11 +8,11 @@
 
 
 // BASE CODE
-function translatePigLatin(str) {
-  return str;
-}
+// function translatePigLatin(str) {
+//   return str;
+// }
 
-translatePigLatin("consonant");
+// translatePigLatin("consonant");
 
 // TEST CASES
 // translatePigLatin("california") //should return "aliforniacay".
@@ -21,14 +21,36 @@ translatePigLatin("consonant");
 // translatePigLatin("algorithm") //should return "algorithmway".
 // translatePigLatin("eight") //should return "eightway".
 
-function translatePigLatin(str) {
-  return str;
-}
-
 // Precode
 // 1. Find consonant cluster via regex by stopping when a vowel is hit
 // 2. Extract the cluster. 
-// 3. Append -ay to the end cluster
+// 3. Append -ay or -way to the end cluster
 // 4. Append modified cluster to the end of string
 
+// My Solution
+function translatePigLatin(str) {
+  let regex = /[aeiou]/g; //this regex will find the index of the first appearance of a vowel
+  let index = str.search(regex); //search is similar to string.indexOf() except it can take regex 
+
+  if (index === 0){
+    str = str.concat('way')
+  } else if (index === -1) {
+    str = str.concat('ay')
+  } else {
+    let consonant = str.slice(0,index).concat('ay');
+    // console.log(consonant)
+    str = str.slice(index).concat(consonant);
+  }
+  
+  console.log(index)
+  console.log(str)
+  return str;
+}
+
 translatePigLatin("consonant");
+translatePigLatin("california") //should return "aliforniacay".
+translatePigLatin("paragraphs")// should return "aragraphspay".
+translatePigLatin("glove") //should return "oveglay".
+translatePigLatin("algorithm") //should return "algorithmway".
+translatePigLatin("eight") //should return "eightway".
+translatePigLatin("TV")
