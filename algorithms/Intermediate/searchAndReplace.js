@@ -21,3 +21,14 @@
 // myReplace("His name is Tom", "Tom", "john") should return "His name is John".
 // myReplace("Let us get back to more Coding", "Coding", "algorithms") should return "Let us get back to more Algorithms".
 
+// Precode 
+// 1. split up string into array using array.split(); each word = one element
+// 2. Use array.indexOf() to find where word needs to be replaced
+// 3. Use array.splice() to sub out the words
+
+// My Solution
+function myReplace(str, before, after) {
+	return str;
+  }
+  
+  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
