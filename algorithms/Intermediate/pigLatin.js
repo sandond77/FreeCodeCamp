@@ -32,12 +32,12 @@ function translatePigLatin(str) {
   let regex = /[aeiou]/g; //this regex will find the index of the first appearance of a vowel
   let index = str.search(regex); //search is similar to string.indexOf() except it can take regex 
 
-  if (index === 0){
+  if (index === 0){ //if the initial letter is a vowel
     str = str.concat('way')
-  } else if (index === -1) {
+  } else if (index === -1) { //if the word doesnt contain a vowel
     str = str.concat('ay')
-  } else {
-    let consonant = str.slice(0,index).concat('ay');
+  } else { //if the word does contain a vowel and it isnt the initial letter
+    let consonant = str.slice(0,index).concat('ay'); //this will slice out all consonant terms before the vowel and add -ay to it
     // console.log(consonant)
     str = str.slice(index).concat(consonant);
   }
