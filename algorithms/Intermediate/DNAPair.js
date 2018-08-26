@@ -26,12 +26,12 @@
 // 3. Based of the element, push the corresponding base pair
 
 function pairElement(str) {
-	str = str.split("");
+	str = str.split(""); //splits the input into seperate arrays
 
 	for (var i = 0; i < str.length; i++) {
-		switch(str[i]){
+		switch(str[i]){ //for each index of the array, this switch case will match a base pair to it
 			case 'A':
-				str[i] = str[i].split(''); 
+				str[i] = str[i].split(''); //the array is split into another array so we can push the matching base pair; cannot put this split before the switch case
 				str[i].push('T');
 				break;
 			case 'T':
