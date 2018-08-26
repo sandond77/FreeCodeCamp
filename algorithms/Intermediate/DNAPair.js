@@ -20,8 +20,14 @@
 // pairElement("CTCTA") //should return [["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]].
 
 
+// Precode
+// 1. Split input into seperate arrays
+// 2. For each array, read the value of the element.
+// 3. Based of the element, push the corresponding base pair
+
 function pairElement(str) {
-  return str;
+	
+  	return str;
 }
 
 pairElement("GCG");
