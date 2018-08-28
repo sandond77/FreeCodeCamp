@@ -19,15 +19,29 @@
 // fearNotLetter("abcdefghijklmnopqrstuvwxyz") //should return undefined.
 
 // PRECODE
-// 1. Turn string into array
-// 2. Use string.charCodeAt() to see if the next unicode value exists or not 
-// 3. Use string.fromCharCode() to return the unicode
-// 4. If nothing is spliced in, return undefined. 
+// 1. Use string.charCodeAt() to see if the next unicode value exists or not 
+// 2. Use string.fromCharCode() to return the unicode
+// 3. If nothing is spliced in, return undefined. 
 
 
 
 function fearNotLetter(str) {
-  return str;
+	for (var i = 0; i < str.length; i++) {
+		let currentLetter = str.charCodeAt(i);
+		
+		// console.log(currentLetter, str.charCodeAt(0)+i) //this will compare the hexcode value 
+	
+		if (currentLetter !== str.charCodeAt(0)+i) { //this will compare the hexcode value, if the hexcode of the current one does not equal it will return the letter
+			console.log(String.fromCharCode(currentLetter - 1))
+			return (String.fromCharCode(currentLetter - 1))
+		}
+	}
+
+  	return undefined;
 }
 
-fearNotLetter("abce");
+fearNotLetter("abce") //should return "d".
+fearNotLetter("abcdefghjklmno")// should return "i".
+fearNotLetter("stvwx")// should return "u".
+fearNotLetter("bcdf") //should return "e".
+fearNotLetter("abcdefghijklmnopqrstuvwxyz") //should return undefined.
