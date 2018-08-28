@@ -18,6 +18,13 @@
 // fearNotLetter("bcdf") //should return "e".
 // fearNotLetter("abcdefghijklmnopqrstuvwxyz") //should return undefined.
 
+// PRECODE
+// 1. Turn string into array
+// 2. Use string.charCodeAt() to see if the next unicode value exists or not 
+// 3. Use string.fromCharCode() to return the unicode
+// 4. If nothing is spliced in, return undefined. 
+
+
 
 function fearNotLetter(str) {
   return str;
