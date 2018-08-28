@@ -20,6 +20,11 @@
 // uniteUnique([1, 2, 3], [5, 2, 1]) should return [1, 2, 3, 5].
 // uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]) should return [1, 2, 3, 5, 4, 6, 7, 8].
 
+// PRECODE
+// 1. Compare value of first array to second array
+// 2. If it does not exist push the value; 
+// 3. Repeat vice-versa
+
 function uniteUnique(arr) {
   return arr;
 }
