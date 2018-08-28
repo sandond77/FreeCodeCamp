@@ -15,18 +15,35 @@
 // uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
 // TEST CODE
-// uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) should return [1, 3, 2, 5, 4].
-// uniteUnique([1, 3, 2], [1, [5]], [2, [4]]) should return [1, 3, 2, [5], [4]].
-// uniteUnique([1, 2, 3], [5, 2, 1]) should return [1, 2, 3, 5].
-// uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]) should return [1, 2, 3, 5, 4, 6, 7, 8].
+// uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) //should return [1, 3, 2, 5, 4].
+// uniteUnique([1, 3, 2], [1, [5]], [2, [4]]) //should return [1, 3, 2, [5], [4]].
+// uniteUnique([1, 2, 3], [5, 2, 1]) //should return [1, 2, 3, 5].
+// uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])// should return [1, 2, 3, 5, 4, 6, 7, 8].
 
 // PRECODE
-// 1. Compare value of first array to second array
+// 1. Compare value of first array to each inputted array
 // 2. If it does not exist push the value; 
-// 3. Repeat vice-versa
 
 function uniteUnique(arr) {
-  return arr;
+	let holder = [];
+	for (var i = 0; i < arguments.length; i++) { //loops through the arguments/arrays
+		let current = arguments[i]
+		// console.log(current)
+
+		for (var j = 0; j < arguments[i].length; j++) { //loops through each array to see if the value exists in the holder array
+
+			if (holder.indexOf(arguments[i][j]) === -1) { //checks to see if the array contains the index or not
+				holder.push(arguments[i][j])  //pushes the value to array if -1 index is returned
+			}
+
+		}
+	}
+	
+	console.log(holder)
+  	return holder
 }
 
-uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) //should return [1, 3, 2, 5, 4].
+uniteUnique([1, 3, 2], [1, [5]], [2, [4]]) //should return [1, 3, 2, [5], [4]].
+uniteUnique([1, 2, 3], [5, 2, 1]) //should return [1, 2, 3, 5].
+uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]) //should return [1, 2, 3, 5, 4, 6, 7, 8].
