@@ -45,3 +45,54 @@ fearNotLetter("abcdefghjklmno")// should return "i".
 fearNotLetter("stvwx")// should return "u".
 fearNotLetter("bcdf") //should return "e".
 fearNotLetter("abcdefghijklmnopqrstuvwxyz") //should return undefined.
+
+
+// BASIC SOLUTION
+// function fearNotLetter(str) {
+
+//   for(var i = 0; i < str.length; i++) {
+//     /* code of current character */
+//     var code = str.charCodeAt(i);
+
+//     /* if code of current character is not equal to first character + no of iteration
+//     hence character has been escaped */
+//     if (code !== str.charCodeAt(0) + i) {
+
+//       /* if current character has escaped one character find previous char and return */
+//       return String.fromCharCode(code - 1);
+//     }  
+//   }
+//   return undefined;
+// }
+
+// fearNotLetter("abce");
+
+// INTERMEDIATE SOLUTION
+// // Adding this solution for the sake of avoiding using 'for' and 'while' loops.
+// // See the explanation for reference as to why. It's worth the effort.
+
+// function fearNotLetter(str) {
+//   var compare = str.charCodeAt(0), missing;
+
+//   str.split('').map(function(letter,index) {
+//     if (str.charCodeAt(index) == compare) {
+//       ++compare;
+//     } else {
+//       missing = String.fromCharCode(compare);
+//     }
+//   });
+
+//   return missing;
+// }
+
+// // test here
+// fearNotLetter("abce");
+
+// ADVANCED SOLUTION
+// function fearNotLetter(str) {
+//   for (let i = 1; i < str.length; ++i) {
+//     if (str.charCodeAt(i) - str.charCodeAt(i-1) > 1) {
+//       return String.fromCharCode(str.charCodeAt(i - 1) + 1);
+//     }
+//   }
+// }
