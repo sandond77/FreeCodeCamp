@@ -21,7 +21,11 @@
 // convertHTML("<>") //should return &​lt;&​gt;.
 // convertHTML("abc") //should return abc.
 
-
+// PRECODE
+// 1. Determine the HTML entities for the 5 cases (&, <, >, " (double quote), and ' (apostrophe))
+// 2. Split up string into array 
+// 3. Iterate through array and use switch to change the characters into the corresponding HTML entity
+// 4. Rejoin the array into string
 
 function convertHTML(str) {
   // &colon;&rpar;
