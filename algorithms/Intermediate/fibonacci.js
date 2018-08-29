@@ -21,8 +21,27 @@
 // sumFibs(75024) // should return 60696.
 // sumFibs(75025)  //should return 135721
 
+// PRECODE
+// 1. Code the Fibonacci sequence 
+// 2. As the numbers are being summed, check to see if the number is odd.
+// 3. Sum up and return the odd numbers 
+
 function sumFibs(num) {
-  return num;
+	let number = 0;
+	let number2 = 1;
+	let sum = 0;
+
+	while (number < num){
+		if (number2 % 2 !== 0) {
+			sum += number
+		}
+
+		number = number + number2
+		console.log("number:" + number2);
+		console.log("sum:" + sum)
+	}
+
+ 	return num;
 }
 
 sumFibs(4);
