@@ -26,22 +26,29 @@
 // 2. As the numbers are being summed, check to see if the number is odd.
 // 3. Sum up and return the odd numbers 
 
+// MY SOLUTION 
 function sumFibs(num) {
 	let number = 0;
 	let number2 = 1;
 	let sum = 0;
 
-	while (number < num){
+	while (number2 <= num){
 		if (number2 % 2 !== 0) {
-			sum += number
+			sum += number2
 		}
 
-		number = number + number2
-		console.log("number:" + number2);
-		console.log("sum:" + sum)
+		number2 = number + number2;
+		number = number2 - number;
+		// console.log("number:" + number);
+		//		console.log("sum:" + sum)
 	}
-
- 	return num;
+	
+	console.log("sum:" + sum)
+ 	return sum;
 }
 
-sumFibs(4);
+sumFibs(1000)  //should return 1785.
+sumFibs(4000000)  //should return 4613732.
+sumFibs(4) // should return 5.
+sumFibs(75024) // should return 60696.
+sumFibs(75025)  //should return 135721
