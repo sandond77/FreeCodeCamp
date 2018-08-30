@@ -24,8 +24,13 @@
 // smallestCommons([23, 18]) //should return 6056820.
 
 
+PRECODE 
+1. Sort array from largest to smallest value
+2. Create a new array that contains the values in between the number range provided
+3.
+
 function smallestCommons(arr) {
-  return arr;
+  	return arr;
 }
 
 
