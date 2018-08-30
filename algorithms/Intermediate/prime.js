@@ -28,21 +28,21 @@
 
 //MY SOLUTION
 function sumPrimes(num) {
-	let remainder = false;
+	let remainder = false; //flag variable that starts false, meaning we have a prime number
 	let sum = 0;
 
-	for (var i = 2; i <= num; i++) { 
-		for (var j = 2; j < i; j++) {
-		 	if (i % j == 0){
-		 		remainder = true
+	for (var i = 2; i <= num; i++) { //first loop for counting up to the inputted number
+		for (var j = 2; j < i; j++) { //second loop for counting the numbers to divide by
+		 	if (i % j == 0){ //divides the first number loop by the second number loop to see if theres a remainder
+		 		remainder = true; //if there is no remainder, flag variable will become true and indicates it is not a prime number
 		 	} 
 		}
 
-		if (remainder === false) {
+		if (remainder === false) { //if our flag variable did not change, we will sum that number
 			sum += i
 		}
 
-		remainder = false;
+		remainder = false; //resets our flag variable to false if it did change
 	}
 
 	console.log(sum)
