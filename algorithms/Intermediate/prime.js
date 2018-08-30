@@ -18,8 +18,36 @@
 // sumPrimes(10) //should return 17.
 // sumPrimes(977) //should return 73156.
 
+// PRECODE
+// 1. Use two for loops.
+// 	a. To count up towards the inputted number
+// 	b. To check if there's a remainder after dividing
+// 2. If there is a remainde at anything besides dividing by itself, return flag variable as false and return undefined.
+// 3. If there is no remainder, return flag variable as true.
+
+
+//MY SOLUTION
 function sumPrimes(num) {
-  return num;
+	let remainder = false;
+	let sum = 0;
+
+	for (var i = 2; i <= num; i++) { 
+		for (var j = 2; j < i; j++) {
+		 	if (i % j == 0){
+		 		remainder = true
+		 	} 
+		}
+
+		if (remainder === false) {
+			sum += i
+		}
+
+		remainder = false;
+	}
+
+	console.log(sum)
+  return sum;
 }
 
 sumPrimes(10);
+sumPrimes(977) //should return 73156.
