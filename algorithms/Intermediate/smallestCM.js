@@ -25,12 +25,18 @@
 
 
 PRECODE 
-1. Sort array from largest to smallest value
-2. Create a new array that contains the values in between the number range provided
-3.
+1. Create a new array that contains the values in between the number range provided from largest to smallest
+2. Use Euclidean Algorithm to the GCD
+3. Use the GC to find the LCM
 
 function smallestCommons(arr) {
   	return arr;
+
+  	function gcd(a, b)
+    if b = 0
+       return a; 
+    else
+       return gcd(b, a % b);
 }
 
 
