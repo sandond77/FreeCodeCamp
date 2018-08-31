@@ -31,24 +31,25 @@
 
 function smallestCommons(arr) {
 	let holder = [];
-	let max = Math.max(arr[0],arr[1]);
-	let min = Math.min(arr[0],arr[1]);
+	let max = Math.max(arr[0],arr[1]); //find the max
+	let min = Math.min(arr[0],arr[1]); //find the min
 
-	for (let i = max; i >= min; i--) { 
+	for (let i = max; i >= min; i--) {  //creates a new array from largest to smallest
 		holder.push(i);
 	}
 
-    let lcm = holder[0];
+    let lcm = holder[0]; //starts the least common multiple at the largest value in the array
 
-    for (let i = 1; i < holder.length; i++) {
-    	var GCD = gcd(lcm, holder[i]);
-    	lcm = (lcm * holder[i]) / GCD;
+    for (let i = 1; i < holder.length; i++) { //loop for running through our array
+    	var GCD = gcd(lcm, holder[i]); //calls on the gcd function to find the lcm 
+    	lcm = (lcm * holder[i]) / GCD; // finds the lcm by dividing by the greatest common divisor
+    	console.log(lcm = (lcm * holder[i]) / GCD);
     }
 	console.log(lcm);
 	return lcm
-
-
-	function gcd(a, b){ //Euclidean Algorithm
+	
+	// Watch https://www.youtube.com/watch?v=JUzYl1TYMcU for a walkthrough on Euclidean
+	function gcd(a, b){ //Euclidean Algorithm to find the greatest common divisor 
 		if (b === 0){
 			return a; 
 		} else {
