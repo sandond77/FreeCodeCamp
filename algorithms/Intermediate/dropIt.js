@@ -24,9 +24,10 @@
 
 function dropElements(arr, func) {
   // Drop them elements.
-	let length = arr.length;
-	  	for (let i = 0; i < length; i++){ 
-	  	if (!func(arr[0])){ 
+	let length = arr.length; //need this variable to set the array length to its original value otherwise it will be too short with arr.length
+	  	for (let i = 0; i < length; i++){ //for the ORIGINAL length of the array we will run the loop; 
+			// console.log(length, func(arr[0]));
+	  	if (!func(arr[0])){ //if the callback is false, the first element of the array will be removed
 			arr.shift();
 	  	}
   	}
