@@ -24,20 +24,41 @@
 // smallestCommons([23, 18]) //should return 6056820.
 
 
-PRECODE 
-1. Create a new array that contains the values in between the number range provided from largest to smallest
-2. Use Euclidean Algorithm to the GCD
-3. Use the GC to find the LCM
+// PRECODE 
+// 1. Create a new array that contains the values in between the number range provided from largest to smallest
+// 2. Use Euclidean Algorithm to the GCD
+// 3. Use the GCD to find the LCM
 
 function smallestCommons(arr) {
-  	return arr;
+	let holder = [];
+	let max = Math.max(arr[0],arr[1]);
+	let min = Math.min(arr[0],arr[1]);
 
-  	function gcd(a, b)
-    if b = 0
-       return a; 
-    else
-       return gcd(b, a % b);
+	for (let i = max; i >= min; i--) { 
+		holder.push(i);
+	}
+
+    let lcm = holder[0];
+
+    for (let i = 1; i < holder.length; i++) {
+    	var GCD = gcd(lcm, holder[i]);
+    	lcm = (lcm * holder[i]) / GCD;
+    }
+	console.log(lcm);
+	return lcm
+
+
+	function gcd(a, b){ //Euclidean Algorithm
+		if (b === 0){
+			return a; 
+		} else {
+			return gcd(b, a % b);
+		}
+  	}
 }
 
-
-smallestCommons([1,5]);
+smallestCommons([1, 5])  //should return 60.
+smallestCommons([5, 1]) // should return 60.
+smallestCommons([2, 10]) // should return 2520.
+smallestCommons([1, 13])  //should return 360360.
+smallestCommons([23, 18]) //should return 6056820.
