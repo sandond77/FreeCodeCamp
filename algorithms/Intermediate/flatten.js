@@ -22,3 +22,22 @@
 // PRECODE
 // 1. Use a loop to get into the nested array
 // 2. Push nested element into a new array
+
+// BASE CODE
+// function steamrollArray(arr) {
+//   // I'm a steamroller, baby
+// 	console.log(typeof (arr[1]))
+// 	let holder = [];
+// 	let push = '';
+	
+// 	for (let i=0; i < arr.length; i++){
+// 		console.log(Array.isArray(arr[i]));
+// 		while (Array.isArray(arr[i])){
+// 			push = arr[i].slice(i)
+// 		}
+// 		console.log("push",push);
+// 	}
+//   	return arr;
+// }
+
+steamrollArray([1, [2], [3, [[4]]]]);
