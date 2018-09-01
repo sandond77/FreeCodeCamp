@@ -18,3 +18,7 @@
 // steamrollArray([1, [2], [3, [[4]]]]) //should return [1, 2, 3, 4].
 // steamrollArray([1, [], [3, [[4]]]]) //should return [1, 3, 4].
 // steamrollArray([1, {}, [3, [[4]]]]) //should return [1, {}, 3, 4].
+
+// PRECODE
+// 1. Use a loop to get into the nested array
+// 2. Push nested element into a new array
