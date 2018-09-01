@@ -23,15 +23,14 @@
 
 // MY SOLUTION
 function binaryAgent(str) {
-	str = str.split(' ');
+	str = str.split(' '); //splits the string to a new array
 	
-	for (let i=0; i < str.length; i++){
-		str[i] = parseInt(str[i], 2)
-		str[i] = String.fromCharCode(str[i]);
+	for (let i=0; i < str.length; i++){ //for loop runs length array
+		str[i] = parseInt(str[i], 2) //turns our binary into a unicode using parseInt w/ a base 2 
+		str[i] = String.fromCharCode(str[i]); //turns each unicode into the corresponding letter
 	}
 
-	str = str.join('')
-	console.log(str);
+	str = str.join('') //rejoins the letters in the array abck into a string 
 	return str;
 }
 
