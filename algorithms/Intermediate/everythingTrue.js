@@ -28,9 +28,9 @@
 function truthCheck(collection, pre) { 
 	let status = true;
 
-	for (var i = 0; i < collection.length; i++) {
-		// console.log(collection[i][pre])
-		if (!collection[i][pre]) { //if this does not exist, we set out flag variable status to false
+	for (var i = 0; i < collection.length; i++) { //for the length of the object
+		// console.log(collection[i][pre]) 
+		if (!collection[i][pre]) { //checking to see if the object's property exists or not 
 			status = false
 		}
 	}
@@ -49,3 +49,33 @@ truthCheck([{"single": "yes"}], "single")  //should return true
 truthCheck([{"single": ""}, {"single": "double"}], "single")  //should return false
 truthCheck([{"single": "double"}, {"single": undefined}], "single")  //should return false
 truthCheck([{"single": "double"}, {"single": NaN}], "single")  //should return false
+
+
+// BASIC SOLUTION
+// function truthCheck(collection, pre) {
+//   // Create a counter to check how many are true.
+//   var counter = 0;
+//   // Check for each object
+//   for (var c in collection) {
+//     // If it is has property and value is truthy
+//     if (collection[c].hasOwnProperty(pre) && Boolean(collection[c][pre])) {
+//       counter++;
+//     }
+//   }
+//   // Outside the loop, check to see if we got true for all of them and return true or false
+//   return counter == collection.length;
+// }
+
+
+// INTERMEDIATE SOLUTION
+// function truthCheck(collection, pre) {
+//   return collection.every(function (element) {
+//     return element.hasOwnProperty(pre) && Boolean(element[pre]);
+//   });
+// }
+
+// ADVANCED SOLUTION
+// function truthCheck(collection, pre) {
+//   // Is everyone being true?
+//   return collection.every(obj => obj[pre]);
+// }
