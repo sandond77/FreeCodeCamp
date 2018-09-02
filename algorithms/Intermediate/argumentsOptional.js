@@ -34,7 +34,36 @@
 // 3. If there isn't a 2nd argument, return the first argument
 
 function addTogether() {
-  return false;
+	let sum = 0;
+	let arg1 = arguments[0]
+	if (number(arg1) && number(arguments[1])){
+		sum = arg1 + arguments[1]
+		console.log(sum)
+		return sum;
+	} 	else if (number(arg1) && !arguments[1]){
+		return (
+			function second(arg2){
+				if(number(arg2)){
+					sum = arg1 + arg2
+					console.log(sum)
+					return sum;
+				}
+			})
+	}	else {
+		return undefined;
+	}
+
+	function number(arg){
+		if(typeof(arg) === 'number'){
+			return arg
+		} else {
+			return undefined;
+		}
+	}
 }
 
-addTogether(2,3);
+addTogether(2, 3) //should return 5.
+addTogether(2)(3) //should return 5.
+addTogether("http://bit.ly/IqT6zt") //should return undefined.
+addTogether(2, "3") //should return undefined.
+addTogether(2)([3]) //should return undefined.
