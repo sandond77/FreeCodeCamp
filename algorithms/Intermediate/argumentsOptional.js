@@ -21,10 +21,20 @@
 
 // addTogether(2,3);
 
-
 // TEST CODE
 // addTogether(2, 3) //should return 5.
 // addTogether(2)(3) //should return 5.
 // addTogether("http://bit.ly/IqT6zt") //should return undefined.
 // addTogether(2, "3") //should return undefined.
 // addTogether(2)([3]) //should return undefined.
+
+// PRECODE
+// 1. Check for existence of arguments
+// 2. If there is a 2nd argument, complete the arithmatic
+// 3. If there isn't a 2nd argument, return the first argument
+
+function addTogether() {
+  return false;
+}
+
+addTogether(2,3);
