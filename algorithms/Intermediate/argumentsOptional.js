@@ -57,8 +57,6 @@ function addTogether() {
 	function number(arg){ //this callback function allows us quickly check that the arguments are a number
 		if(typeof(arg) === 'number'){
 			return arg
-		} else {
-			return undefined;
 		}
 	}
 }
