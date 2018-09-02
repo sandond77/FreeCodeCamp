@@ -24,9 +24,20 @@
 // truthCheck([{"single": "double"}, {"single": undefined}], "single")  //should return false
 // truthCheck([{"single": "double"}, {"single": NaN}], "single")  //should return false
 
-function truthCheck(collection, pre) {
+function truthCheck(collection, pre) { 
+	let status = true;
+
+	for (var i = 0; i < collection.length; i++) {
+		if (!collection[i][pre]) {
+			console.log(collection[i][pre])
+			status = false
+		}
+	}
+
+	console.log(status)
   // Is everyone being true?
-  return pre;
+  return status;
 }
 
 truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+// truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex")  //should return false.
