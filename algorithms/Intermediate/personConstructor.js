@@ -36,6 +36,10 @@
 // bob.getFirstName() //should return "Haskell" after bob.setFullName("Haskell Curry").
 // bob.getLastName() //should return "Curry" after bob.setFullName("Haskell Curry").
 
+// PRECODE
+// 1. Declare a new constructor
+// 2. Establish the fields for the constructor and make sure the inputs are strings
+
 MY SOLUTION
 	var Person = function(firstAndLast) {
 		// Complete the method below and implement the others similarly
