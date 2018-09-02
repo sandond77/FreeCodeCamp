@@ -31,29 +31,30 @@
 // PRECODE
 // 1. Check for existence of arguments
 // 2. If there is a 2nd argument, complete the arithmatic
-// 3. If there isn't a 2nd argument, return the first argument
+// 3. If there isn't a 2nd argument, return the first argument and a new function that takes a new argument
+// 4. New Function will sum first arguemnt and the new argument after number check
 
 function addTogether() {
 	let sum = 0;
-	let arg1 = arguments[0]
-	if (number(arg1) && number(arguments[1])){
+	let arg1 = arguments[0] //if we dont declare arguments[0] as variable now, we wont be able to call on it for usage in the return function
+	if (number(arg1) && number(arguments[1])){ // Case 1. Two numbers are inputted as arguments so we can sum normally
 		sum = arg1 + arguments[1]
 		console.log(sum)
 		return sum;
-	} 	else if (number(arg1) && !arguments[1]){
-		return (
-			function second(arg2){
-				if(number(arg2)){
+	} 	else if (number(arg1) && !arguments[1]){ // Case 2. Second argument isn't inputted
+ 		return (
+			function second(arg2){ // this will return a functional that takes another argument
+				if(number(arg2)){ //if this new argument is also a number, we will sum it with the first argument
 					sum = arg1 + arg2
 					console.log(sum)
 					return sum;
 				}
 			})
-	}	else {
+	}	else { //if numbers are not inputted, we will return undefined
 		return undefined;
 	}
 
-	function number(arg){
+	function number(arg){ //this callback function allows us quickly check that the arguments are a number
 		if(typeof(arg) === 'number'){
 			return arg
 		} else {
