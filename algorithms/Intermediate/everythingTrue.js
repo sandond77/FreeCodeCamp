@@ -30,7 +30,7 @@ function truthCheck(collection, pre) {
 
 	for (var i = 0; i < collection.length; i++) { //for the length of the object
 		// console.log(collection[i][pre]) 
-		if (!collection[i][pre]) { //checking to see if the object's property exists or not 
+		if (!collection[i][pre]) { //checking to see if the object's property contains a truthy value or not 
 			status = false
 		}
 	}
