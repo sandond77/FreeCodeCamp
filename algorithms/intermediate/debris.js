@@ -3,7 +3,7 @@
 
 // The array will contain objects in the format {name: 'name', avgAlt: avgAlt}.
 
-// You can read about orbital periods on Wikipedia.
+// You can read about orbital periods on Wikipedia. https://en.wikipedia.org/wiki/Orbital_period
 
 // The values should be rounded to the nearest whole number. The body being orbited is Earth.
 
@@ -23,9 +23,16 @@
 // orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
 
 
-// TETT CODE
+// TEST CODE
 // orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]) //should return [{name: "sputnik", orbitalPeriod: 86400}].
 // orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}]) //should return [{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}].
+
+// PRECODE
+// 1. Orbital Period equation is T = 2*pi*sqrt(a^3/u)
+// 	1a. a = orbit of semi-major axis
+// 	1b. u = GM =  standard gravitation parameter 
+// 2. Turn equation to a formula that can be used in function
+// 3. Plug into numbers and return the orbital period
 
 
 function orbitalPeriod(arr) {
