@@ -34,6 +34,12 @@
 // palindrome("0_0 (: /-\ :) 0-0")// should return true.
 // palindrome("five|\_/|four") //should return false
 
+// Precode
+// 1. Use regex to remove all punctuation, spaces, and symbols
+// 2. Turn remaining letters into lower case
+// 3. Iterate through the string starting at [0] and stop at half way (string.length/2)
+// 4. Iterate through the string, starting at the end [-1] (string.length/2)
+
 
 function palindrome(str) {
   // Good luck!
