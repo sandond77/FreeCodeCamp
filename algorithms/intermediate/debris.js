@@ -35,15 +35,14 @@
 // 3. Plug into numbers and return the orbital period
 
 
+
 function orbitalPeriod(arr) {
 	const GM = 398600.4418;
 	const earthRadius = 6367.4447;
-	let answer = [];
-	for (var i = 0; i < arr.length; i++) {
-		let a = earthRadius + arr[i].avgAlt;
+	let answer = []; 
+	for (var i = 0; i < arr.length; i++) { //if the input is an object, we will iterate through the object to find the orbital period
+		let a = earthRadius + arr[i].avgAlt; //finds a, the semi-major axis, by adding the radius of the earth and the avg altitude
 		let T = 2*Math.PI*Math.sqrt((Math.pow(a, 3))/GM)
-		console.log(a)
-		console.log(orbitalPeriod)
 		answer.push({
 			name: arr[i].name,
 			orbitalPeriod: Math.round(T)
