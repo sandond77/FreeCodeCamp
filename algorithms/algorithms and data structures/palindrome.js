@@ -42,8 +42,11 @@
 
 
 function palindrome(str) {
-  // Good luck!
-  return true;
+	let regex = /[^a-zA-Z]/g 
+	let string = str.replace('regex', '');
+	
+	console.log(string);
+  	return true;
 }
 
-palindrome("eye");
+palindrome("_eye")
