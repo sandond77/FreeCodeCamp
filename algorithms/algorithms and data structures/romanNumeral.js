@@ -39,6 +39,10 @@
 // convertToRoman(2014) should return "MMXIV"
 // convertToRoman(3999) should return "MMMCMXCIX"
 
+PRECODE
+1. Roman Numerals are base5. On the 4th value of any base 5 digit, the value is calulated by subtraction. The same letter isnt repeated more than 3 times.
+2. Need to find a way to convert from base10 to base5. Since roman numerals are strings, we need to use string.concat() to get the final result
+
 
 function convertToRoman(num) {
  return num;
