@@ -42,11 +42,23 @@
 
 
 function palindrome(str) {
-	let regex = /[^a-zA-Z]/g 
-	let string = str.replace('regex', '');
+	let regex = /[^0-9a-zA-Z]/g //keeps only the letters and numbers
+	// str = str.replace(regex, '');
+	// console.log(str);
+	// str = str.toLowerCase();
+	// str = str.split('');
 	
-	console.log(string);
-  	return true;
+	str = str.replace(regex, '').toLowerCase().split('');
+	console.log(str);
+	console.log(str.reverse())
+
+	if (str.join() === str.reverse().join()) {
+		console.log(true)
+		return true
+	} else {
+		console.log(false)
+		return false
+	}
 }
 
-palindrome("_eye")
+palindrome("1 eye for of 1 eye.")
