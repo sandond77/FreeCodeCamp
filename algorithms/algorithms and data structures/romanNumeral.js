@@ -46,14 +46,14 @@
 
 
 function convertToRoman(num) {
-	let romans = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']; 
-	let values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
+	let romans = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];  //need to explicitly define the special 4 and 9 cases
+	let values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ]; //we could also define this from low to high, but we would need to reverse the array or for loop
 	let romanSum = "";
 	
 	for (var i = 0; i < values.length; i++) {
 		while (values[i] <= num){
-			romanSum += romans[i] 
-			num -= values[i] 
+			romanSum += romans[i]  //this will concat the roman numerals as we run through the numerals
+			num -= values[i]  //since the loop runs until values[i] <= num, we need this to eventually hit 0
 			// console.log(num)
 			// console.log(romanSum)
 		}
