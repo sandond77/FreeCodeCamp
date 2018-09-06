@@ -32,34 +32,50 @@
 // 4. If its greater than 26, subtract 26 from the index and return the letter.
 
 // ATTEMPT #1 (broken)
+// function rot13(str) { // LBH QVQ VG!
+//   	let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+// 	let holder = [];
+
+//   	for (var i = 0; i < str.length; i++) {
+
+//   		for (var j = 0; i < alphabet.length; j++) {
+//   			console.log(str[i] === alphabet[j])
+// 	  		if (str[i] === alphabet[j]) {
+// 	  			let index = j + 13
+// 				if (index > 26) {
+// 					holder.push(alphabet[j-26]);
+// 					console.log(holder)
+// 				} else {
+// 					holder.push(alphabet[j])
+// 					console.log(holder)
+// 				}
+// 	  		}
+//   		}
+//   	}
+//   	return holder;
+// }
+
+
+// Attempt #2 (Cant figure out how to add space to string)
 function rot13(str) { // LBH QVQ VG!
-  	let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-	let holder = [];
+  	let regex = /[A-Z]/;
+  	let holder = [];
 
   	for (var i = 0; i < str.length; i++) {
-
-  		for (var j = 0; i < alphabet.length; j++) {
-  			console.log(str[i] === alphabet[j])
-	  		if (str[i] === alphabet[j]) {
-	  			let index = j + 13
-				if (index > 26) {
-					holder.push(alphabet[j-26]);
-					console.log(holder)
-				} else {
-					holder.push(alphabet[j])
-					console.log(holder)
-				}
-	  		}
+  		if (regex.test(str[i])) {
+  			holder.push(str[i].charCodeAt() + 13)
   		}
   	}
-  	return holder;
-}
 
-
-// Attempt #2
-function rot13(str) { // LBH QVQ VG!
-  
- 	 return str;
+  	for (var i = 0; i < holder.length; i++) {
+  		if (holder[i] >= 90) {	//90 is the ascii code for Z
+			holder[i] = ((holder[i] - 65) % 26) + 65 //65 is the ascii code for A. if we add the remainder, we will get our shifted letter
+  		}
+  		holder[i] = String.fromCharCode(holder[i])
+  	}
+  	holder = holder.join(" ");
+	console.log(holder)
+ 	return str;
 }
 
 // Change the inputs below to test
