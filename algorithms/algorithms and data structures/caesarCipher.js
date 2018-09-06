@@ -28,9 +28,27 @@
 
 
 function rot13(str) { // LBH QVQ VG!
-  
-  return str;
+  	let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+	let holder = [];
+
+  	for (var i = 0; i < str.length; i++) {
+
+  		for (var j = 0; i < alphabet.length; j++) {
+  			console.log(str[i] === alphabet[j])
+	  		if (str[i] === alphabet[j]) {
+	  			let index = j + 13
+				if (index > 26) {
+					holder.push(alphabet[j-26]);
+					console.log(holder)
+				} else {
+					holder.push(alphabet[j])
+					console.log(holder)
+				}
+	  		}
+  		}
+  	}
+  	return holder;
 }
 
 // Change the inputs below to test
-rot13("SERR PBQR PNZC");
+rot13("SERR PBQR PNZC") //should decode to FREE CODE CAMP
