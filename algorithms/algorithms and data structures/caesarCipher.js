@@ -25,8 +25,13 @@
 // rot13("SERR YBIR?") //should decode to FREE LOVE?
 // rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.") //should decode to THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
 
+// PreCode
+// 1. Create an array of alphabet letters
+// 2. Iterate through string to match letter with alphabet arrays index
+// 3. Add a value of 13 to the letter's corresponding index.
+// 4. If its greater than 26, subtract 26 from the index and return the letter.
 
-
+// ATTEMPT #1 (broken)
 function rot13(str) { // LBH QVQ VG!
   	let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 	let holder = [];
@@ -48,6 +53,13 @@ function rot13(str) { // LBH QVQ VG!
   		}
   	}
   	return holder;
+}
+
+
+// Attempt #2
+function rot13(str) { // LBH QVQ VG!
+  
+ 	 return str;
 }
 
 // Change the inputs below to test
