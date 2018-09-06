@@ -56,27 +56,36 @@
 // }
 
 
-// Attempt #2 (Cant figure out how to add space to string)
+// // Attempt #2 (Cant figure out how to add space to string)
+// function rot13(str) { // LBH QVQ VG!
+//   	let regex = /[A-Z]/;
+//   	let holder = [];
+
+//   	for (var i = 0; i < str.length; i++) {
+//   		if (regex.test(str[i])) {
+//   			holder.push(str[i].charCodeAt() + 13)
+//   		}
+//   	}
+
+//   	for (var i = 0; i < holder.length; i++) {
+//   		if (holder[i] >= 90) {	//90 is the ascii code for Z
+// 			holder[i] = ((holder[i] - 65) % 26) + 65 //65 is the ascii code for A. if we add the remainder, we will get our shifted letter
+//   		}
+//   		holder[i] = String.fromCharCode(holder[i])
+//   	}
+//   	holder = holder.join(" ");
+// 	console.log(holder)
+//  	return str;
+// }
+
+// // Change the inputs below to test
+// rot13("SERR PBQR PNZC") //should decode to FREE CODE CAMP
+
+
+// Attempt #3 	//using regex and replace only?
 function rot13(str) { // LBH QVQ VG!
   	let regex = /[A-Z]/;
-  	let holder = [];
-
-  	for (var i = 0; i < str.length; i++) {
-  		if (regex.test(str[i])) {
-  			holder.push(str[i].charCodeAt() + 13)
-  		}
-  	}
-
-  	for (var i = 0; i < holder.length; i++) {
-  		if (holder[i] >= 90) {	//90 is the ascii code for Z
-			holder[i] = ((holder[i] - 65) % 26) + 65 //65 is the ascii code for A. if we add the remainder, we will get our shifted letter
-  		}
-  		holder[i] = String.fromCharCode(holder[i])
-  	}
-  	holder = holder.join(" ");
-	console.log(holder)
- 	return str;
+  	str = str.replace(regex, String.fromCharCode((str.charCodeAt() % 26 + 65)));
+  	console.log(str);
+  	return str;
 }
-
-// Change the inputs below to test
-rot13("SERR PBQR PNZC") //should decode to FREE CODE CAMP
