@@ -84,8 +84,25 @@
 
 // Attempt #3 	//using regex and replace only?
 function rot13(str) { // LBH QVQ VG!
-  	let regex = /[A-Z]/;
-  	str = str.replace(regex, String.fromCharCode((str.charCodeAt() % 26 + 65)));
+  	let regex = /[A-Z]/g ;
+	  	str = str.replace(regex, (str) => {
+			str = ((str.charCodeAt() - 65 + 13) % 26) + 65;
+			console.log(str)
+			return String.fromCharCode(str);
+		});
+
+	// str = str.split('')
+	// 	for (let i=0; i < str.length; i++){
+	// 		str[i] = str[i].replace(regex, (str) =>{
+	// 			str = ((str.charCodeAt() + 13 - 65) % 26) + 65;
+	// 			// console.log(((str.charCodeAt() + 13 - 65) % 26) + 65)
+	// 			console.log(String.fromCharCode(str))
+	// 			return String.fromCharCode(str);
+	// 		})
+	// 	}
+	// str = str.join('')
   	console.log(str);
   	return str;
 }
+
+rot13("SERR PBQR PNZC") //should decode to FREE CODE CAMP
