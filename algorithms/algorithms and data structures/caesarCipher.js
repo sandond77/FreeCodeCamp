@@ -84,23 +84,13 @@
 
 // Attempt #3 	//using regex and replace only?
 function rot13(str) { // LBH QVQ VG!
-  	let regex = /[A-Z]/g ;
+  	let regex = /[A-Z]/g ; //declares our regex to look for capital letters from A-Z
 	  	str = str.replace(regex, (str) => {
-			str = ((str.charCodeAt() - 65 + 13) % 26) + 65;
+			str = ((str.charCodeAt() - 65 + 13) % 26) + 65; //+13 for our shift. Then we find our remainder by subtracting 65 and modulus 26. THenn add 65 back to get to our ascii codes for capital letters
 			console.log(str)
-			return String.fromCharCode(str);
+			return String.fromCharCode(str); //we need this return so that the replace() method can use the function output
 		});
 
-	// str = str.split('')
-	// 	for (let i=0; i < str.length; i++){
-	// 		str[i] = str[i].replace(regex, (str) =>{
-	// 			str = ((str.charCodeAt() + 13 - 65) % 26) + 65;
-	// 			// console.log(((str.charCodeAt() + 13 - 65) % 26) + 65)
-	// 			console.log(String.fromCharCode(str))
-	// 			return String.fromCharCode(str);
-	// 		})
-	// 	}
-	// str = str.join('')
   	console.log(str);
   	return str;
 }
