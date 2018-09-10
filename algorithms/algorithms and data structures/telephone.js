@@ -52,6 +52,11 @@
 // telephoneCheck("(555-555-5555") should return false.
 // telephoneCheck("(555)5(55?)-5555") should return false.
 
+
+// Precode
+// 1. Use a regex generator to see if it matches one of the 6 given formats
+// 2. https://regexr.com/
+
 function telephoneCheck(str) {
   // Good luck!
   return true;
